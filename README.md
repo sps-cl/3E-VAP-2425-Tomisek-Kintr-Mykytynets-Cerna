@@ -9,8 +9,8 @@ Use Case diagram:
 ![Návrh_1](TomisekNavrh1.png)
 Autor: Ondřej Tomíšek
 
-![Návrh_2]()
-Autor:
+![Návrh_2](MykytynetsNavrh2.png)
+Autor: Danyila Mykytynets
 
 ![Návrh_3]()
 Autor:
