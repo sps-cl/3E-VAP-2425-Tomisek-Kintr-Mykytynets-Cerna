@@ -13,5 +13,8 @@ Autor: Ondřej Tomíšek
 Autor: Danyila Mykytynets
 
 ![Návrh_3]()
-Autor:
+Autor: Matěj Kintr
+
+![Návrh_4]()
+Autor: Leona Černá
 

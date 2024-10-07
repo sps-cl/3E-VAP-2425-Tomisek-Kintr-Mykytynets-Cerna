@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programátorské piškvorky - pro 2 hráče</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .tlacitko {
+            width: 200px;
+            height: 200px;
+            font-size: 24px;
+            margin: 5px;
+        }
+        table {
+            margin: 0 auto;
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Programátorské piškvorky</h1>
+    <table>
+        <tr>
+            <td><button class="tlacitko" onclick="tah(this)"></button></td>
+            <td><button class="tlacitko" onclick="tah(this)"></button></td>
+            <td><button class="tlacitko" onclick="tah(this)"></button></td>
+        </tr>
+        <tr>
+            <td><button class="tlacitko" onclick="tah(this)"></button></td>
+            <td><button class="tlacitko" onclick="tah(this)"></button></td>
+            <td><button class="tlacitko" onclick="tah(this)"></button></td>
+        </tr>
+        <tr>
+            <td><button class="tlacitko" onclick="tah(this)"></button></td>
+            <td><button class="tlacitko" onclick="tah(this)"></button></td>
+            <td><button class="tlacitko" onclick="tah(this)"></button></td>
+        </tr>
+    </table>
+
+    <div id="status">Hráč 1 je na tahu!</div>
+
+    <script src="index.js"></script>
+</body>
+</html>
