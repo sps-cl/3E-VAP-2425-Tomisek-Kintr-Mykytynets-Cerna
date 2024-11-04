@@ -12,7 +12,7 @@ Autor: Ondřej Tomíšek
 ![Návrh_2](MykytynetsNavrh2.png)
 Autor: Danyila Mykytynets
 
-![Návrh_3]()
+![Návrh_3](Kintr.png)
 Autor: Matěj Kintr
 
 ![Návrh_4]()
