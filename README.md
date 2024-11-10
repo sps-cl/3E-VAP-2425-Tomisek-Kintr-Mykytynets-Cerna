@@ -3,7 +3,7 @@ Webová verze hry Piškvorky, pravidla [zde](https://www.zatrolene-hry.cz/spolec
 
 # Dokumentace
 Use Case diagram:
-![Obrázek](usecase.drawio)
+![Obrázek](usecase.jpg)
 
 ## Grafický návrh
 ![Návrh_1](TomisekNavrh1.png)
