@@ -3,7 +3,7 @@ Webová verze hry Piškvorky, pravidla [zde](https://www.zatrolene-hry.cz/spolec
 
 # Dokumentace
 Use Case diagram:
-![Obrázek](uscase)
+![Obrázek](usecase.drawio)
 
 ## Grafický návrh
 ![Návrh_1](TomisekNavrh1.png)
@@ -12,7 +12,7 @@ Autor: Ondřej Tomíšek
 ![Návrh_2](MykytynetsNavrh2.png)
 Autor: Danyila Mykytynets
 
-![Návrh_3](Kintr.png)
+![Návrh_3](Kintr.jpg)
 Autor: Matěj Kintr
 
 ![Návrh_4]()

@@ -1,9 +1,82 @@
 <mxfile host="65bd71144e">
     <diagram id="rZY-5BF0_umIfImzvbQf" name="Page-1">
-        <mxGraphModel dx="283" dy="607" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1129" dy="787" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="25" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="260" width="90" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="690" y="290" width="110" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iIconGrid;gridSize=3,3;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="260" width="250" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;" edge="1" parent="1" source="28">
+                    <mxGeometry width="100" relative="1" as="geometry">
+                        <mxPoint x="120" y="340" as="sourcePoint"/>
+                        <mxPoint x="290" y="300" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;" edge="1" parent="1" source="32">
+                    <mxGeometry width="100" relative="1" as="geometry">
+                        <mxPoint x="630" y="500" as="sourcePoint"/>
+                        <mxPoint x="570" y="430" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="Hráč hraje buď za X nebo O" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="335" y="190" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="Cílem hry je dát 3 stejné symboly v jedné řadě nebo vodorovně" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=13;perimeterSpacing=7;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="625" width="360" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;" edge="1" parent="1" target="28">
+                    <mxGeometry width="100" relative="1" as="geometry">
+                        <mxPoint x="120" y="340" as="sourcePoint"/>
+                        <mxPoint x="290" y="300" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="Hráč1 vybírá pole, kam zapíše O" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="430" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;" edge="1" parent="1" source="26" target="32">
+                    <mxGeometry width="100" relative="1" as="geometry">
+                        <mxPoint x="690" y="375.1428571428571" as="sourcePoint"/>
+                        <mxPoint x="570" y="430" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="Poté ,co se hráč Hráč1 rozhodne je na řadě Hráč2 ,co zapíše X" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="480" width="360" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="570" width="90" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="Pokud nikdo nedá 3 stejné symboly v řadě nebo vodorovně, tak je to remíza a hraje se dál" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="655" width="500" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=13;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="130" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="" style="endArrow=none;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="570" y="200" as="sourcePoint"/>
+                        <mxPoint x="640" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="50" value="" style="endArrow=none;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="570" y="130" as="sourcePoint"/>
+                        <mxPoint x="650" y="200" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="53" value="" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;strokeWidth=13;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="520" width="70" height="60" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>

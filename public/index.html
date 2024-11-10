@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Programátorské Piškvorky</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Piškvorky</h1>
+  <div class="board">
+    <div class="cell" data-index="0"></div>
+    <div class="cell" data-index="1"></div>
+    <div class="cell" data-index="2"></div>
+    <div class="cell" data-index="3"></div>
+    <div class="cell" data-index="4"></div>
+    <div class="cell" data-index="5"></div>
+    <div class="cell" data-index="6"></div>
+    <div class="cell" data-index="7"></div>
+    <div class="cell" data-index="8"></div>
+  </div>
+  <p id="status">Hraje hráč X</p>
+  <button id="restartButton" onclick="resetGame()" style="display: none;">Nová hra</button>
+  <button id="endGameButton" onclick="endGame()" style="display: none;">Konec hry</button> <!-- Tlačítko pro konec hry -->
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    const cells = document.querySelectorAll('.cell');
+    const statusText = document.getElementById('status');
+    const restartButton = document.getElementById('restartButton');
+    const endGameButton = document.getElementById('endGameButton'); // Tlačítko pro konec hry
+
+    let gameState = Array(9).fill(null);
+    let currentPlayer = 'X';
+    let gameActive = true;
+    let playerTurn = true;
+
+    socket.on('gameState', ({ gameState: serverGameState, currentPlayer: serverCurrentPlayer }) => {
+        gameState = serverGameState;
+        currentPlayer = serverCurrentPlayer;
+        renderGameState();
+        updateStatusText();
+    });
+
+    cells.forEach((cell, index) => {
+        cell.addEventListener('click', () => {
+            if (gameActive && gameState[index] === null && playerTurn) {
+                playerTurn = false; 
+                gameState[index] = currentPlayer; 
+                socket.emit('makeMove', index);
+                renderGameState(); 
+                checkGameStatus();
+            }
+        });
+    });
+
+    function renderGameState() {
+        cells.forEach((cell, index) => {
+            cell.textContent = gameState[index];
+        });
+    }
+
+    function updateStatusText() {
+        statusText.textContent = `Na tahu je hráč ${currentPlayer}`;
+    }
+
+    function checkGameStatus() {
+        const winningCombinations = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
+        ];
+
+        for (let combination of winningCombinations) {
+            const [a, b, c] = combination;
+            if (gameState[a] && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
+                statusText.textContent = `Hráč ${gameState[a]} vyhrál!`;
+                gameActive = false;
+                restartButton.style.display = 'block';
+                endGameButton.style.display = 'block'; // Zobrazit tlačítko pro konec hry
+                return;
+            }
+        }
+
+        if (!gameState.includes(null)) {
+            statusText.textContent = 'REMÍZA!';
+            gameActive = false;
+            restartButton.style.display = 'block';
+            endGameButton.style.display = 'block'; // Zobrazit tlačítko pro konec hry
+        }
+
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        updateStatusText();
+        playerTurn = true;
+    }
+
+    socket.on('gameOver', ({ winner }) => {
+        if (winner === 'Draw') {
+            statusText.textContent = 'REMÍZA!';
+        } else {
+            statusText.textContent = `Hráč ${winner} vyhrál!`;
+        }
+        gameActive = false;
+        restartButton.style.display = 'block';
+        endGameButton.style.display = 'block'; // Zobrazit tlačítko pro konec hry
+    });
+
+    function resetGame() {
+        gameState.fill(null); 
+        currentPlayer = 'X'; 
+        gameActive = true; 
+        playerTurn = true; 
+        renderGameState(); 
+        updateStatusText(); 
+        restartButton.style.display = 'none'; 
+        endGameButton.style.display = 'none'; // Skrytí tlačítka pro konec hry
+        socket.emit('resetGame'); 
+    }
+
+    // Funkce pro ukončení hry
+    function endGame() {
+        // Přesměrování na jinou stránku (můžeš upravit na jiný soubor nebo stránku)
+        if (window.confirm('Opravdu chcete ukončit hru? Budete přesměrováni na stránku s výsledkem.')) {
+            window.location.href = '/endgame.html'; // Představuje stránku s informacemi o ukončení hry
+        }
+    }
+  </script>
+</body>
+</html>
